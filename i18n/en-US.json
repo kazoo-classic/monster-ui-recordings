@@ -1,0 +1,68 @@
+{
+	"recordings": {
+		"title": "Recordings Manager",
+		"menuTitles": {
+			"receivedRECs": "Received Recordings",
+			"storage": "Storage"
+		},
+		"receivedRECs": {
+			"filterByDate": "Filter by Dates",
+			"table": {
+				"columns": {
+					"status": "Status",
+					"direction": "Direction",
+					"callId": "Call ID",
+					"received": "Received",
+					"from": "From",
+					"targetNumber": "Target Number",
+					"duration": "Duration",
+					"name": "Name"
+				},
+				"emptyRow": "There are no recordings stored for the selected User"
+			},
+			"empty": {
+				"headline1": "There are",
+				"headline2": "users recognized on this account",
+				"subHeadline": "Select a user to manage the recordings it contains."
+			},
+			"actionBar": {
+				"select": {
+					"all": "All on page",
+					"new": "New",
+					"listened": "Listened",
+					"deleted": "Deleted",
+					"none": "None"
+				},
+				"selectREC": {
+					"none": "Select a User"
+				},
+				"from": "From",
+				"to": "To",
+				"markAsNew": "Mark as New",
+				"markAsListened": "Mark as Listened",
+				"markAsDeleted": "Mark as Deleted",
+				"tooltips": {
+					"markAs": "Delete",
+					"refresh": "Refresh",
+					"select": "Select",
+					"moveTo": "Move To",
+					"delete": "This will remove the selected recordings from the database."
+				},
+				"delete": "Delete",
+				"currentlyViewing": "Currently Viewing",
+				"new": "New:",
+				"total": "Total:"
+			},
+			"status": {
+				"saved": "Listened",
+				"deleted": "Deleted",
+				"new": "New"
+			},
+			"direction": "Direction",
+			"noCDR": "We didn't find any corresponding CDR to this recording. It is possible that the logs have been deleted from the system if this is an old recording.",
+			"CDRPopup": {
+				"title": "CDR Details"
+			}
+		}
+	}
+}

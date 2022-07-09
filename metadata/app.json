@@ -1,0 +1,31 @@
+{
+	"name": "recordings",
+	"i18n": {
+		"en-US": {
+			"label": "Recordings",
+			"description": "The Recordings app allows you to effectively work with call recordings"
+		},
+		"de-De": {
+			"label": "Recordings",
+			"description": "The Recordings app allows you to effectively work with call recordings"
+		}
+	},
+	"tags": [
+		"reseller"
+	],
+	"icon": "recordings.png",
+	"api_url": "",
+	"author": "Baloeng",
+	"version": "1.0",
+	"license": "-",
+	"price": 0,
+	"screenshots": [
+		"recordings1.png",
+		"recordings2.png"
+	],
+	"urls": {
+		"documentation": "{documentation_url}",
+		"howto": "{howto_video_url}"
+	},
+	"pvt_type": "app"
+}

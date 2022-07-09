@@ -1,0 +1,298 @@
+.received-recordings-container.empty .empty-state {
+    display: block
+}
+
+.received-recordings-container .empty-state {
+    display: none;
+    text-align: center
+}
+
+.received-recordings-container .empty-state .headline {
+    font-size: 22px;
+    margin-top: 35px
+}
+
+.received-recordings-container .empty-state .sub-headline {
+    color: #606069;
+    font-size: 16px;
+    margin-top: 13px
+}
+
+.received-recordings-container .empty-state .count {
+    font-weight: 700;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+.received-recordings-container .empty-state .recboxes-list {
+    margin-top: 30px;
+    width: 450px;
+    text-align: left
+}
+
+.received-recordings-container .empty-state .chosen-drop {
+    width: 450px
+}
+
+.received-recordings-container .empty-state .chosen-container>a,
+.received-recordings-container .main-header .chosen-container>a {
+    height: 40px;
+    line-height: 40px;
+    width: 450px
+}
+
+.received-recordings-container .main-header {
+    margin-bottom: 25px
+}
+
+.received-recordings-container .main-header .select-header {
+    color: #606069;
+    margin-bottom: 5px
+}
+
+.received-recordings-container .main-header .chosen-container>a,
+.received-recordings-container .main-header .chosen-drop,
+.received-recordings-container .main-header .recbox-selector,
+.received-recordings-container .main-header .recboxes-list {
+    width: 300px
+}
+
+.received-recordings-container .main-header>* {
+    display: inline-block;
+    margin-right: 25px
+}
+
+.received-recordings-container .main-header #refresh_recordings {
+    margin-top: 35px
+}
+
+.received-recordings-container .main-header .recbox-selector .chosen-container .chosen-single span {
+    font-size: 18px
+}
+
+.received-recordings-container .main-header .counts-wrapper {
+    background: #fff;
+    border: 1px solid #c0c0c9;
+    border-radius: 2px;
+    margin-right: 25px;
+    margin-top: 24px
+}
+
+.received-recordings-container .main-header .counts-wrapper .count-wrapper {
+    color: #606069;
+    display: inline-block;
+    height: 26px;
+    padding: 5px 10px;
+    text-align: center;
+    min-width: 65px
+}
+
+.received-recordings-container .main-header .counts-wrapper .count-wrapper .count-text {
+    font-size: 24px;
+    color: #333;
+    padding-left: 7px
+}
+
+.received-recordings-container .main-header .counts-wrapper .count-wrapper[data-type=new] {
+    border-top: 3px solid #33db24
+}
+
+.received-recordings-container .main-header .counts-wrapper .count-wrapper[data-type=new] .count-text {
+    color: #33db24
+}
+
+.received-recordings-container .main-header .counts-wrapper .count-wrapper:not(:last-child) {
+    border-right: 1px solid #c0c0c9
+}
+
+.received-recordings-container .data-state {
+    display: none
+}
+
+.received-recordings-container .loading-state {
+    display: none;
+    background: #fff none repeat scroll 0 0;
+    border: 1px dashed #aaa;
+    font-size: 60px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    top: 50px
+}
+
+.received-recordings-container .recboxes-list {
+    display: block;
+    margin: auto;
+    width: 400px
+}
+
+.received-recordings-container.empty .filters.basic-actions>*,
+.received-recordings-container.empty .filters.search,
+.received-recordings-container.empty .main-header {
+    display: none
+}
+
+.received-recordings-container .filters.basic-actions {
+    display: inline-block
+}
+
+.received-recordings-container:not(.empty) .action-bar {
+    display: block
+}
+
+.received-recordings-container .action-bar {
+    display: none
+}
+
+.received-recordings-container .action-bar .filters>:first-child {
+    margin-left: 0
+}
+
+.received-recordings-container .action-bar .margin-left {
+    margin-left: 10px
+}
+
+.received-recordings-container .action-bar .hidable {
+    display: inline-block
+}
+
+.received-recordings-container .action-bar .hidable.hidden {
+    display: none
+}
+
+.received-recordings-container .action-bar .move-to-wrapper {
+    margin-left: 10px
+}
+
+.received-recordings-container .recordings-table table {
+    margin-top: 0
+}
+
+.received-recordings-container .recordings-table tbody tr>td:first-child {
+    position: relative
+}
+
+.received-recordings-container .recordings-table tbody tr>td .disable-cell-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none
+}
+
+.received-recordings-container .recordings-table .highlighted tbody tr>td .disable-cell-content {
+    display: block
+}
+
+.received-recordings-container .recordings-table tbody tr>td:first-child .monster-checkbox {
+    margin-right: 10px;
+    margin-top: 8px
+}
+
+.received-recordings-container .recordings-table table.highlighted tbody tr {
+    opacity: .3
+}
+
+.received-recordings-container .recordings-table table.highlighted tbody tr.active {
+    opacity: 1
+}
+
+.received-recordings-container .recordings-table .select-cell {
+    min-width: 20px !important
+}
+
+.received-recordings-container .recordings-table .status {
+    text-transform: uppercase
+}
+
+.received-recordings-container .recordings-table .select-line {
+    cursor: pointer
+}
+
+.received-recordings-container .recordings-table tr .bottom-line {
+    color: #707079;
+    font-size: 12px
+}
+
+.received-recordings-container .recordings-table td.no-padding {
+    padding: 0
+}
+
+.received-recordings-container .dropdown-menu.vmbox-target {
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.received-recordings-container .recordings-table .actions {
+    width: 128px
+}
+
+.received-recordings-container .recordings-table .recording-player {
+    display: table-cell;
+    width: 175px
+}
+
+.received-recordings-container .recordings-table .close-player {
+    cursor: pointer
+}
+
+.received-recordings-container .recordings-table .recording-player audio {
+    width: 170px;
+    float: right
+}
+
+.received-recordings-container .recordings-table .recording-player .close-player {
+    border: 1px solid #aaa;
+    border-radius: 0 4px 4px 0;
+    color: #888;
+    float: right;
+    font-weight: 700;
+    margin: 0;
+    padding: 3px 12px
+}
+
+.received-recordings-container .filter-by-date .date-ranges>* {
+    margin: 0 10px 0 0;
+    vertical-align: middle
+}
+
+.received-recordings-container .filter-by-date .date-ranges>span {
+    margin-right: 5px
+}
+
+.received-recordings-container .filter-by-date .date-ranges input.date-filter {
+    height: 24px;
+    width: 90px
+}
+
+.received-recordings-container .filter-by-date .date-ranges i.fa-calendar {
+    margin-left: -30px;
+    margin-right: 20px
+}
+
+.received-recordings-container .filter-by-date {
+    float: right;
+    line-height: 30px;
+    margin-left: 30px
+}
+
+.received-recordings-container .filter-by-date.active .expand-dates {
+    float: right
+}
+
+.received-recordings-container .filter-by-date .date-ranges,
+.received-recordings-container .filter-by-date.active .expand-dates {
+    display: none
+}
+
+.received-recordings-container .filter-by-date.active .date-ranges {
+    display: block
+}
+
+#recordings_cdr_details_dialog {
+    width: 750px;
+    margin: 15px
+}

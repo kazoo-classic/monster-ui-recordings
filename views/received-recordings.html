@@ -1,0 +1,115 @@
+<div class="received-recordings-container empty">
+	<div class="main-header clearfix">
+		<div class="recording-selection-wrapper pull-left">
+			<div class="filters recbox-selector">
+				<div class="select-header">
+					{{ i18n.recordings.receivedRECs.actionBar.currentlyViewing }}
+				</div>
+				<select class="select-recbox" id="select_recbox">
+					<option value="none"></option>
+					{{#each recboxes}}
+						<option value="{{id}}">{{first_name}} {{last_name}}</option>
+					{{/each}}
+				</select>
+			</div>
+		</div>
+
+		<div class="counts-wrapper pull-left">
+			<div class="count-wrapper" data-type="total">
+				{{ i18n.recordings.receivedRECs.actionBar.total }}
+				<span class="count-text"></span>
+			</div>
+		</div>
+
+		<a id="refresh_recordings" class="monster-link pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-original-title="{{ i18n.recordings.receivedRECs.actionBar.tooltips.refresh }}"><i class="fa fa-refresh"></i></a>
+	</div>
+	<div class="monster-table-wrapper-spaced">
+		<div class="action-bar monster-table-header">
+			<div class="filters basic-actions pull-left">
+				<div class="select-recordings-wrapper monster-select-dropdown-neutral pull-left" data-toggle="tooltip" data-placement="top" data-original-title="{{ i18n.recordings.receivedRECs.actionBar.tooltips.select }}">
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">
+							{{#monsterCheckbox}}
+								<input class="main-select-recording" type="checkbox"/>
+							{{/monsterCheckbox}}
+							<i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);" class="select-some-recordings" data-type="all">{{ i18n.recordings.receivedRECs.actionBar.select.all }}</a></li>
+							<li><a href="javascript:void(0);" class="select-some-recordings" data-type="none">{{ i18n.recordings.receivedRECs.actionBar.select.none }}</a></li>
+						</ul>
+					</li>
+				</div>
+
+				<div class="filters selected-actions pull-left margin-left">
+					<div class="mark-as-wrapper hidable hidden monster-select-dropdown-neutral pull-left" data-toggle="tooltip" data-placement="top" data-original-title="{{ i18n.recordings.receivedRECs.actionBar.tooltips.markAs }}">
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">
+								<i class="icon-telicon-prioritize"></i>
+								<i class="fa fa-caret-down"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0);" class="delete-recordings"><i class="fa fa-trash"></i>{{ i18n.recordings.receivedRECs.actionBar.delete }}</a></li>
+							</ul>
+						</li>
+					</div>
+				</div>
+			</div>
+
+			<div class="filter-by-date">
+				<div class="expand-dates">
+					<a class="monster-link blue toggle-filter">{{ i18n.recordings.receivedRECs.filterByDate }}</a>
+				</div>
+				<div class="date-ranges">
+					<span>{{i18n.startDate}}</span>
+					<input id="startDate" type="text" class="date-filter filter-from">
+					<i class="fa fa-calendar"></i>
+					<span>{{i18n.endDate}}</span>
+					<input id="endDate" type="text" class="date-filter filter-to">
+					<i class="fa fa-calendar"></i>
+					<button type="button" class="apply-filter monster-button-neutral monster-button-fit">{{i18n.filter}}</button>
+					<a class="monster-link blue toggle-filter">{{i18n.cancel}}</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="empty-state">
+				<div class="headline">{{ i18n.recordings.receivedRECs.empty.headline1 }}<span class="count">{{count}}</span>{{ i18n.recordings.receivedRECs.empty.headline2 }}</div>
+				<div class="sub-headline">{{ i18n.recordings.receivedRECs.empty.subHeadline }}</div>
+
+				<div class="recboxes-list">
+					<select class="select-recbox" id="select_recbox_empty">
+						<option value="none"></option>
+						{{#each recboxes}}
+							<option class="box-row" data-id="{{id}}" value="{{id}}">{{first_name}} {{last_name}}</option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+			<div class="data-state">
+				<div class="recordings-table">
+					<table class="monster-table footable" id="recordings_table">
+						<thead>
+							<tr>
+								<th class="select-cell" data-type="html" data-sortable="false"></th>
+								<th data-type="html">{{ i18n.recordings.receivedRECs.table.columns.direction }}</th>
+								<th data-type="html" data-sorted="true" data-direction="DESC">{{ i18n.recordings.receivedRECs.table.columns.received }}</th>
+								<th data-type="html">{{ i18n.recordings.receivedRECs.table.columns.from }}</th>
+								<th data-type="html">{{ i18n.recordings.receivedRECs.table.columns.targetNumber }}</th>
+								<th data-breakpoints="xs">{{ i18n.recordings.receivedRECs.table.columns.duration }}</th>
+								<th data-filterable="false" data-type="html" data-sortable="false"></th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="loading-state">
+				<i class="fa fa-spin fa-spinner monster-primary-color"></i>
+			</div>
+		</div>
+	</div>
+</div>
