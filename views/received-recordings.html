@@ -1,4 +1,4 @@
-<div class="received-recordings-container empty">
+<div class="received-recordings-container">
 	<div class="main-header clearfix">
 		<div class="recording-selection-wrapper pull-left">
 			<div class="filters recbox-selector">
@@ -6,7 +6,7 @@
 					{{ i18n.recordings.receivedRECs.actionBar.currentlyViewing }}
 				</div>
 				<select class="select-recbox" id="select_recbox">
-					<option value="none"></option>
+					<option value="all">All</option>
 					{{#each recboxes}}
 						<option value="{{id}}">{{first_name}} {{last_name}}</option>
 					{{/each}}
@@ -74,19 +74,6 @@
 		</div>
 
 		<div class="content">
-			<div class="empty-state">
-				<div class="headline">{{ i18n.recordings.receivedRECs.empty.headline1 }}<span class="count">{{count}}</span>{{ i18n.recordings.receivedRECs.empty.headline2 }}</div>
-				<div class="sub-headline">{{ i18n.recordings.receivedRECs.empty.subHeadline }}</div>
-
-				<div class="recboxes-list">
-					<select class="select-recbox" id="select_recbox_empty">
-						<option value="none"></option>
-						{{#each recboxes}}
-							<option class="box-row" data-id="{{id}}" value="{{id}}">{{first_name}} {{last_name}}</option>
-						{{/each}}
-					</select>
-				</div>
-			</div>
 			<div class="data-state">
 				<div class="recordings-table">
 					<table class="monster-table footable" id="recordings_table">

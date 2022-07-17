@@ -22,6 +22,10 @@ define(function(require) {
 		},
 
 		requests: {
+			'recordings.get': {
+				'verb': 'GET',
+				'url': 'accounts/{accountId}/recordings?{filters}'
+			},
 			'recordings.user.get': {
 				'verb': 'GET',
 				'url': 'accounts/{accountId}/users/{userId}/recordings?{filters}'
@@ -136,11 +140,11 @@ define(function(require) {
 				placeholder_text_single: self.i18n.active().recordings.receivedRECs.actionBar.selectREC.none
 			});
 
+			// Default selection when page is loaded
+			self.displayRECList(template, "all");
+
 			$selectRECBox.on('change', function() {
 				var recboxId = $(this).val();
-
-				// We update the select-recbox from the listing recordings when we click on a recbox in the welcome page
-				template.find('.select-recbox').val(recboxId).trigger('chosen:updated');
 
 				self.displayRECList(template, recboxId);
 			});
@@ -467,7 +471,6 @@ define(function(require) {
 						totalRecordings: recordings.length
 					}
 				};
-				
 			return formattedData;
 		},
 
@@ -494,35 +497,33 @@ define(function(require) {
 			});
 		},
 
-		getRECBox: function(recboxId, callback) {
-			var self = this;
-
-			monster.request({
-				resource: 'recordings.user.get',
-				data: {
-					accountId: self.accountId,
-					userId: recboxId
-				},
-				success: function(data) {
-					callback && callback(data.data);
-				}
-			});
-		},
-
 		newGetRECBoxMessages: function(filters, recboxId, callback) {
 			var self = this;
 
-			monster.request({
-				resource: 'recordings.user.get',
-				data: {
-					accountId: self.accountId,
-					userId: recboxId,
-					filters: filters
-				},
-				success: function(data) {
-					callback && callback(data);
-				}
-			});
+			if (recboxId === 'all') {
+				monster.request({
+					resource: 'recordings.get',
+					data: {
+						accountId: self.accountId,
+						filters: filters
+					},
+					success: function(data) {
+						callback && callback(data);
+					}
+				});
+			} else {
+				monster.request({
+					resource: 'recordings.user.get',
+					data: {
+						accountId: self.accountId,
+						userId: recboxId,
+						filters: filters
+					},
+					success: function(data) {
+						callback && callback(data);
+					}
+				});
+			}
 		},
 
 		bulkRemoveRecordings: function(recboxId, recordings, callback) {

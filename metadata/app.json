@@ -20,8 +20,7 @@
 	"license": "-",
 	"price": 0,
 	"screenshots": [
-		"recordings1.png",
-		"recordings2.png"
+		"recordings.png"
 	],
 	"urls": {
 		"documentation": "{documentation_url}",
