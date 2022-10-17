@@ -68,9 +68,99 @@ define(function(require) {
 				}
 			];
 
+			var tabConfig = {
+				text: self.i18n.active().recordings.menuTitles.config,
+				menus: [{
+					tabs: [
+						{
+							text: 'Account',
+							callback: self.renderRecordConfig
+						}
+					],
+				}]
+			};
+
+			menus[0].tabs.push(tabConfig);
+
 			monster.ui.generateAppLayout(self, {
 				menus: menus
 			});
+		},
+
+		renderRecordConfig: function (pArgs) {
+			var self = this,
+				args = pArgs || {},
+				parent = args.container || $('#recordings_app_container .app-content-wrapper');
+				
+			self.getAccount(function (accountData) {
+				var templateData = {
+					account: $.extend(true, {}, accountData)
+				};
+				
+				var contentTemplate = $(self.getTemplate({
+						name: 'recordings-config',
+						data: templateData
+					}));
+
+				contentTemplate.find('#recordings_config_save').on('click', function() {
+					var formData = monster.ui.getFormData('recordings_config_form');
+
+					var formattedData = {
+						"call_recording": {
+							"account": {
+								"inbound": {
+									"offnet": {
+										"enabled": formData['inbound-offnet'],
+									},
+									"onnet": {
+										"enabled": formData['inbound-onnet'],
+									}
+								},
+								"outbound": {
+									"offnet": {
+										"enabled": formData['outbound-offnet'],
+									},
+									"onnet": {
+										"enabled": formData['outbound-onnet'],
+									}
+								}
+							}
+						}
+					};
+					self.callApi({
+						resource: 'account.get',
+						data: {
+							accountId: accountData.id
+						},
+						success: function(data, status) {
+							self.callApi({
+								resource: 'account.update',
+								data: {
+									accountId: accountData.id,
+									data: $.extend(true, {}, data.data, formattedData)
+								},
+								success: function(_data, _status) {
+									monster.ui.toast({
+										type: 'success',
+										message: self.i18n.active().toastrMessages.recordConfigUpdateSuccess,
+										options: {
+											timeOut: 5000
+										}
+									});
+								}
+							});
+						}
+					});
+				});
+
+				parent
+					.fadeOut(function () {
+						$(this)
+							.empty()
+							.append(contentTemplate)
+							.fadeIn();
+					});
+			});	
 		},
 
 		renderReceivedRECs: function(pArgs) {
@@ -472,6 +562,20 @@ define(function(require) {
 					}
 				};
 			return formattedData;
+		},
+
+		getAccount: function (callback) {
+			var self = this;
+
+			self.callApi({
+				resource: 'account.get',
+				data: {
+					accountId: self.accountId
+				},
+				success: function (data) {
+					callback(data.data);
+				}
+			});
 		},
 
 		getCDR: function(callId, callback, error) {

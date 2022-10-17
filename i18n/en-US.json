@@ -3,7 +3,8 @@
 		"title": "Recordings Manager",
 		"menuTitles": {
 			"receivedRECs": "Received Recordings",
-			"storage": "Storage"
+			"storage": "Storage",
+			"config": "Configuration"
 		},
 		"receivedRECs": {
 			"filterByDate": "Filter by Dates",
@@ -63,6 +64,20 @@
 			"CDRPopup": {
 				"title": "CDR Details"
 			}
+		},
+		"config": {
+			"legend": "Record Entire Account",
+			"internalInbound": "Record Internal Inbound",
+			"externalInbound": "Record External Inbound",
+			"internalOutbound": "Record Internal Outbound",
+			"externalOutbound": "Record External Outbound",
+			"internalInboundTooltip": "This setting will record every inbound internal calls on the account, including callflows, ring groups, conferences, etc. unless specific settings for the user and/or device indicate otherwise",
+			"externalInboundTooltip": "This setting will record every inbound external calls on the account, including callflows, ring groups, conferences, etc. unless specific settings for the user and/or device indicate otherwise",
+			"internalOutboundTooltip": "This setting will record every outbound internal calls on the account, including callflows, ring groups, conferences, etc. unless specific settings for the user and/or device indicate otherwise",
+			"externalOutboundTooltip": "This setting will record every outbound external calls on the account, including callflows, ring groups, conferences, etc. unless specific settings for the user and/or device indicate otherwise"
 		}
+	},
+	"toastrMessages": {
+		"recordConfigUpdateSuccess": "Recordings configuration updated successfully!"
 	}
 }

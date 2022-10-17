@@ -296,3 +296,62 @@
     width: 750px;
     margin: 15px
 }
+
+/***** Record Config Tab *****/
+.main-content .tab-content {
+	background: transparent;
+	border: none;
+	overflow: visible;
+}
+.main-content .tab-content .tab-pane {
+	border-radius: 2px;
+	border: solid 1px #c0c0c9;
+	background: #f0f0f9;
+}
+
+.recordings_account_tab {
+	padding: 20px;
+}
+
+.recordings_account_tab .control-label {
+	text-align: left;
+    width: 180px;
+}
+
+.recordings_account_tab .control-label .help-tip {
+	margin-left: 0.5rem;
+}
+
+.recordings_account_tab .control-label .iconography-small {
+    margin-top: -3px;
+    font-size: 14px;
+    width: 14px;
+    height: 14px; 
+}
+
+.recordings_account_tab .control-label .iconography-help {
+    color: #909099; 
+}
+    .recordings_account_tab .control-label .iconography-help:hover {
+      color: #2e2e32; 
+    }
+
+.recordings_account_tab .controls {
+	margin-left: 250px;
+}
+
+.main-content .tab-content {
+	background: transparent;
+	border: none;
+	overflow: visible;
+}
+
+.main-content .tab-content .buttons-div {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: solid 1px #c0c0c9;
+}
+
+.main-content .tab-content .buttons-div > button {
+	float: right;
+}

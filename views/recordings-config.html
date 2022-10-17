@@ -1,0 +1,81 @@
+<div class="main-content">
+	<div class="tab-content">
+		<div class="recordings_account_tab">
+			<form id="recordings_config_form" class="form-horizontal">
+				<legend>{{ i18n.recordings.config.legend }}</legend>
+				<div class="control-group">
+					<label for="inbound-offnet" class="control-label">
+						{{ i18n.recordings.config.internalInbound }}
+						<span class="help-tip" title="{{ i18n.recordings.config.internalInboundTooltip }}" data-toggle="tooltip">
+							{{telicon "question--circle" class="iconography-small iconography-help"}}
+						</span> 
+					</label>
+					<div class="controls">
+						
+							{{#monsterSwitch}}
+							{{#if account.call_recording}}
+								<input type="checkbox" name="inbound-onnet"{{#if account.call_recording.account.inbound.onnet.enabled}} checked{{/if}}>
+							{{else}}
+								<input type="checkbox" name="inbound-onnet">
+							{{/if}}
+							{{/monsterSwitch}}
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="inbound-offnet" class="control-label">
+						{{ i18n.recordings.config.externalInbound }}
+						<span class="help-tip" title="{{ i18n.recordings.config.externalInboundTooltip }}" data-toggle="tooltip">
+							{{telicon "question--circle" class="iconography-small iconography-help"}}
+						</span>
+					</label>
+					<div class="controls">
+					{{#monsterSwitch}}
+					{{#if account.call_recording}}
+						<input type="checkbox" name="inbound-offnet"{{#if account.call_recording.account.inbound.offnet.enabled}} checked{{/if}}>
+					{{else}}
+						<input type="checkbox" name="inbound-offnet">
+					{{/if}}
+					{{/monsterSwitch}}
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="outbound-onnet" class="control-label">
+						{{ i18n.recordings.config.internalOutbound }}
+						<span class="help-tip" title="{{ i18n.recordings.config.internalOutboundTooltip }}" data-toggle="tooltip">
+							{{telicon "question--circle" class="iconography-small iconography-help"}}
+						</span>
+					</label>
+					<div class="controls">
+					{{#monsterSwitch}}
+					{{#if account.call_recording}}
+						<input type="checkbox" name="outbound-onnet"{{#if account.call_recording.account.outbound.onnet.enabled}} checked{{/if}}>
+					{{else}}
+						<input type="checkbox" name="outbound-onnet">
+					{{/if}}
+					{{/monsterSwitch}}
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="outbound-offnet" class="control-label">
+						{{ i18n.recordings.config.externalOutbound }}
+						<span class="help-tip" title="{{ i18n.recordings.config.externalOutboundTooltip }}" data-toggle="tooltip">
+							{{telicon "question--circle" class="iconography-small iconography-help"}}
+						</span>
+					</label>
+					<div class="controls">
+					{{#monsterSwitch}}
+					{{#if account.call_recording}}
+						<input type="checkbox" name="outbound-offnet"{{#if account.call_recording.account.outbound.offnet.enabled}} checked{{/if}}>
+					{{else}}
+						<input type="checkbox" name="outbound-offnet">
+					{{/if}}
+					{{/monsterSwitch}}
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="clearfix buttons-div">
+			<button id="recordings_config_save" class="monster-button-success">{{i18n.update}}</button>
+		</div>
+	</div>
+</div>
