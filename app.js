@@ -531,6 +531,7 @@ define(function(require) {
 						formattedTo = tryFormatPhoneNumber(to),
 						formattedFrom = tryFormatPhoneNumber(from),
 						formattedCallerIDName = tryFormatPhoneNumber(callerIDName);
+						rec.direction = rec.origin.split(' ')[0];
 
 					return _.merge({
 						formatted: {
